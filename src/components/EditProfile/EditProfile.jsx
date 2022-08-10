@@ -13,6 +13,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FormControl, InputLabel } from '@mui/material';
 import { MenuItem, Select } from '@mui/material';
 import { updateUserAsync, getUserAsync } from '../../redux/users/thunks';
+import FileBase64 from "react-file-base64";
+
 
 const theme = createTheme();
 
@@ -32,8 +34,14 @@ export default function EditProfile() {
     skillLevel: '',
     age: '',
     height: '',
-    gender: '',    
+    gender: '',
+    bio: '',
+    image: '',  
   });
+
+  function handleImageInput(base64) {
+    setInputs({ ...inputs, image: base64 });
+  }
 
   useEffect(() => {
       if (userInfo) {
@@ -43,7 +51,9 @@ export default function EditProfile() {
             skillLevel: userInfo.skillLevel,
             age: userInfo.age,
             height: userInfo.height,
-            gender: userInfo.gender,    
+            gender: userInfo.gender,
+            bio: userInfo.bio,
+            image: userInfo.image,    
         })
     }
   }, [userInfo])
@@ -160,6 +170,29 @@ export default function EditProfile() {
                     <MenuItem value={'Other'}>Other</MenuItem>
                   </Select>
                   </FormControl>
+              </Grid>
+
+              <Grid item xs={12} value={inputs.image}>
+                <div className="upload-picture">
+                  <FileBase64
+                    multiple={false}
+                    onDone={({ base64 }) => handleImageInput(base64)}
+                  />
+                </div>
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  multiline
+                  id="bio"
+                  label="Short Bio"
+                  I
+                  name="bio"
+                  value={inputs.bio}
+                  onChange={handleChange}
+                />
               </Grid>
             </Grid>
             <Button
