@@ -1,7 +1,7 @@
 const getUsers = async () => {
   const id = localStorage.getItem("id");
   const response = await fetch(
-    `https://pickup-server-heroku.herokuapp.com/users/discover/${id}`,
+    `https://pickup-server.onrender.com/users/discover/${id}`,
     {
       method: "GET",
     }
@@ -12,7 +12,7 @@ const getUsers = async () => {
 
 const getUser = async (id) => {
   const response = await fetch(
-    `https://pickup-server-heroku.herokuapp.com/users/${id}`,
+    `https://pickup-server.onrender.com/users/${id}`,
     {
       method: "GET",
     }
@@ -22,7 +22,7 @@ const getUser = async (id) => {
 
 const updateUser = async ({ id, updatedFields }) => {
   const response = await fetch(
-    `https://pickup-server-heroku.herokuapp.com/users/${id}`,
+    `https://pickup-server.onrender.com/users/${id}`,
     {
       method: "PATCH",
       headers: {
@@ -37,7 +37,7 @@ const updateUser = async ({ id, updatedFields }) => {
 
 const signIn = async ({ email, password }) => {
   const response = await fetch(
-    `https://pickup-server-heroku.herokuapp.com/signIn`,
+    `https://pickup-server.onrender.com/signIn`,
     {
       method: "POST",
       headers: {

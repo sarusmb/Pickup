@@ -116,7 +116,7 @@ export default function SignUp() {
     }
 
     const response = await fetch(
-      "https://pickup-server-heroku.herokuapp.com/signUp",
+      "https://pickup-server.onrender.com/signUp",
       {
         method: "PUT",
         headers: {

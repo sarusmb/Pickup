@@ -5,7 +5,7 @@ export async function createInteraction(swipe, userIdTwo) {
     swiped: swipe,
   };
   try {
-    await fetch(`https://pickup-server-heroku.herokuapp.com/interaction`, {
+    await fetch(`https://pickup-server.onrender.com/interaction`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function sanitizeUsers(users) {
   const id = localStorage.getItem("id");
   try {
     let interactions = await fetch(
-      `https://pickup-server-heroku.herokuapp.com/interaction/${id}`,
+      `https://pickup-server.onrender.com/interaction/${id}`,
       {
         method: "GET",
         headers: {
