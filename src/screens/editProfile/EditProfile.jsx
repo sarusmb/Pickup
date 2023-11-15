@@ -85,7 +85,7 @@ export default function EditProfile() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#ff8540" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Box
@@ -186,7 +186,7 @@ export default function EditProfile() {
                   })
                 )
               }
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, bgcolor: "#ff8540" }}
             >
               Update Profile
             </Button>
