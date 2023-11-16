@@ -7,6 +7,9 @@ https://pickup-client.netlify.app
 Here is the repo to our server!
 https://github.com/jialongclu/pickup-server
 
+# Demo
+https://youtu.be/FImNm_wVDSw
+![demo](https://github.com/sarusmb/Pickup/blob/main/src/pickupDemo.gif)
 # Project Tasks Requirements
 
 *  Project task requirements:
